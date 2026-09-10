@@ -9,7 +9,13 @@ A production-quality Ticket Management REST API built in Go.
 This service provides user registration, JWT-based authentication, and full ticket lifecycle management. Each user can only view and manage their own tickets. Ticket status follows a strict one-way flow: `open → in_progress → closed`.
 
 ---
+## Live Deployment
 
+**API Base URL:**  
+https://ticket-management-a5yg.onrender.com
+
+**Health Check:**  
+https://ticket-management-a5yg.onrender.com/health
 ## Features
 
 - User registration with bcrypt password hashing
@@ -284,8 +290,8 @@ Attempting any other transition returns `400 Bad Request`.
 
 ```bash
 # 1. Clone
-git clone <your-repo-url>
-cd ticket-system
+git clone https://github.com/harshit-mangal/Ticket-Management.git
+cd Ticket-Management
 
 # 2. Copy environment file and set your secret
 cp .env.example .env
@@ -379,5 +385,6 @@ go vet ./...
 ---
 
 ## Author
+### HARSHIT MANGAL
+ 
 
-Built as a Golang Backend Intern Assignment.
