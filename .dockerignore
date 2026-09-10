@@ -1,0 +1,22 @@
+# Exclude secrets and local configuration
+.env
+
+# Exclude database files — the container creates its own
+*.db
+*.sqlite
+*.sqlite3
+
+# Exclude build output
+bin/
+tmp/
+
+# Exclude test binaries
+*.test
+*.out
+
+# Exclude VCS metadata
+.git
+.gitignore
+
+# Exclude documentation and non-code files
+README.md

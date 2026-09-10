@@ -1,0 +1,19 @@
+# Environment files — never commit secrets
+.env
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Compiled binaries
+bin/
+tmp/
+
+# Go build cache artifacts
+*.test
+*.out
+
+# OS files
+.DS_Store
+Thumbs.db
