@@ -55,13 +55,19 @@ func main() {
 	ticketRepo := ticket.NewRepository(db)
 	ticketService := ticket.NewService(ticketRepo)
 	ticketHandler := ticket.NewHandler(ticketService)
-
-	// --- Router setup ---
+	//ROUTER SETUP
 	r := chi.NewRouter()
 
 	// Global middleware applied to every request.
-	r.Use(middleware.Logger)    // logs each request with status and duration
-	r.Use(middleware.Recoverer) // recovers from panics and returns 500
+	r.Use(middleware.Logger)
+	r.Use(middleware.Recoverer)
+
+	// Root endpoint.
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(`{"message":"Ticket Management API is running"}`))
+	})
 
 	// Public endpoints — no authentication required.
 	r.Get("/health", healthHandler)
